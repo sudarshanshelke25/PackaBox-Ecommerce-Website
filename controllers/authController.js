@@ -1,5 +1,6 @@
-import { hashPassword } from '../helpers/authHelper.js';
 import User from '../models/userModel.js';
+import { hashPassword } from '../helpers/authHelper.js';
+import JWT from 'jsonwebtoken';
 
 export const signupController = async(req, res) => {
     try {
