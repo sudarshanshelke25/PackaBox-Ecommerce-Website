@@ -3,6 +3,7 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import connectDB from './config/mongoose.js';
+import authRoutes from './routes/authRoute.js'
 
 
 // Configure ENV
@@ -19,14 +20,17 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
-// routes 
+// ROUTES
+app.use('/api/v1/auth', authRoutes);
+// app.use('/api/v1/category/', categoryRoutes);
+// app.use('/api/v1/product/', productRoutes);
+
+// REST API
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to PackABox</h1>`);
 });
 
-// app.use('/api/v1/auth/', authRoutes);
-// app.use('/api/v1/category/', categoryRoutes);
-// app.use('/api/v1/product/', productRoutes);
+
 
 // PORT FOR NODE SERVER
 const PORT = process.env.PORT || 8080;
