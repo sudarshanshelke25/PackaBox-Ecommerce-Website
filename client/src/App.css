@@ -1,0 +1,5 @@
+.layout {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0rem 0rem;
+}
