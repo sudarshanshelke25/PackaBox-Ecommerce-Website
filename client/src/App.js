@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import Forgot from './auth/Forgot';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Home />} />
+        <Route path="/forgot" element={<Forgot />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </>

@@ -7,24 +7,27 @@ const NavAuth = () => {
   return (
     <>
         <div className='nav-auth'>
-            <li className='auth-item'>
+            {/* <li className='auth-item'>
                 <Link to='/' className='auth-link'>
                     <i><IoStorefront /></i> Home
                 </Link>
-            </li>
+            </li> */}
             <li className='auth-item'>
                 <Link to='/login' className='auth-link'>
-                    <i><FaCircleUser /></i> LogIn
+                    <i className='icon'><FaCircleUser /></i>
+                    <span className='text'> LogIn</span>
                 </Link>
             </li>
             <li className='auth-item'>
                 <Link to='/signup' className='auth-link'>
-                    <i><FaCircleUser /></i> SignUp
+                    <i className='icon'><FaCircleUser /></i>
+                    <span className='text'> SignUp</span>
                 </Link>
             </li>
             <li className='auth-item'>
                 <Link to='/cart' className='auth-link'>
-                    <i><FaCartShopping /></i> Cart
+                    <i className='icon'><FaCartShopping /></i>
+                    <span className='text'>  Cart</span>
                 </Link>
             </li>
         </div>

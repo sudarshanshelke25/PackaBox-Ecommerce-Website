@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SearchBar = () => {
+const NavSearch = () => {
   return (
     <>
         <div className='nav-search'>
-            <input className='search-field' type="text" name="search-field" placeholder='type here to search products...'/>
+            <input className='search-field' type="text" name="search-field" placeholder='search products here...'/>
             <button className='search-button' type="button">
               Search
             </button>
@@ -13,4 +13,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default NavSearch;

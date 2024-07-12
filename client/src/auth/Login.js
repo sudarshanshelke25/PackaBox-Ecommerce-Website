@@ -1,15 +1,13 @@
-import React from 'react';
-import Layout from './../layouts/Layout';
-
+import React from 'react'
+import Layout from '../layouts/Layout'
 
 const Login = () => {
   return (
     <Layout>
-        <main className='page'>
-            <h1>Login Page</h1>
-        </main>
+      <div>Login</div>
     </Layout>
-  );
-};
+    
+  )
+}
 
-export default Login;
+export default Login

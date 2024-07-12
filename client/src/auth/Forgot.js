@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../layouts/Layout'
 
-const Signup = () => {
+const Forgot = () => {
   return (
     <Layout>
-      <div>SignUp</div>
-    </Layout>  
+      <div>Forgot</div>
+    </Layout>
   )
 }
 
-export default Signup;
+export default Forgot
