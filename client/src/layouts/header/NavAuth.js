@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaCartShopping, FaCircleUser, FaHouseChimney } from "react-icons/fa6";
 import { IoStorefront } from "react-icons/io5";
 
@@ -13,22 +13,22 @@ const NavAuth = () => {
                 </Link>
             </li> */}
             <li className='auth-item'>
-                <Link to='/login' className='auth-link'>
+                <NavLink to='/login' className='auth-link'>
                     <i className='icon'><FaCircleUser /></i>
                     <span className='text'> LogIn</span>
-                </Link>
+                </NavLink>
             </li>
             <li className='auth-item'>
-                <Link to='/signup' className='auth-link'>
+                <NavLink to='/signup' className='auth-link'>
                     <i className='icon'><FaCircleUser /></i>
                     <span className='text'> SignUp</span>
-                </Link>
+                </NavLink>
             </li>
             <li className='auth-item'>
-                <Link to='/cart' className='auth-link'>
+                <NavLink to='/cart' className='auth-link'>
                     <i className='icon'><FaCartShopping /></i>
                     <span className='text'>  Cart</span>
-                </Link>
+                </NavLink>
             </li>
         </div>
     </>

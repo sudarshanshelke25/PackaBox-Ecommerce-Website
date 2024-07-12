@@ -14,13 +14,17 @@
     --primary-color: "";
     --secondary-color:"" ;
     --white: #ffffff;
+    
+    --black-dark1: #252525;
     --black-dark1: #252525;
     --black-dark2: #2c3333;
+    --black-dark2: #171925;
     --black-dark3: #494d58;
     --black-dark4: #5a5f63;
     --black-dark5: #828f93;
+    --black-dark6: #26293e;
     --red: #fc3a46;
-    --blue: #246af3;
+    --blue: #4e81e7;
 
     --blue1: #404258;
     --blue2: #474E68;
@@ -60,6 +64,14 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--black-dark2);
+    /* color: var(--black-dark2); */
     transition: 0.3s;
+}
+
+ul, ol {
+    padding-left: 0 !important;
+}
+
+li {
+    list-style: none;
 }

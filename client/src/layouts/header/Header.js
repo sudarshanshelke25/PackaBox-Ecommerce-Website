@@ -7,11 +7,13 @@ import './header.css';
 
 const Header = () => {
   return (
-    <div className='header'>
-      <NavLogo/>
-      <NavSearch/>
-      <NavAuth/>
-    </div>
+    <section className='header-container'>
+      <div className='header'>
+        <NavLogo/>
+        <NavSearch/>
+        <NavAuth/>
+      </div>
+    </section>
   )
 }
 

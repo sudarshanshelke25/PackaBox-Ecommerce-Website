@@ -1,3 +1,9 @@
+.header-container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0rem 0rem;
+}
+
 .header {
     max-width: var(--max-width);
     display: flex;
@@ -13,6 +19,15 @@
     justify-content: baseline;
     gap: 0.5rem;
 }
+
+.header .nav-logo a {
+    color: var(--black-dark2);
+}
+
+.nav-logo a:hover {
+    color: var(--blue);
+}
+
 
 .nav-icon {
     font-size: 2.4rem;
@@ -73,14 +88,22 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     position: relative;
     top: 2px;
     z-index: 9;
+    transition: 0.3;
+
+    .active {
+        color: var(--black-dark1);
+        /* background-color: var(--white); */
+        /* border-radius: 6px 6px 0px 0px; */
+    }
 }
 
 .auth-item {
     list-style: none;
+    transition: 0.3;
 }
 
 .auth-link {
@@ -89,8 +112,7 @@
     font-size: 1.1rem;
     font-weight: 500;
     transition: 0.3s;
+    padding: 0.5rem;
 }
 
-.auth-link:active {
-    color: var(--black-dark3);
-}
+

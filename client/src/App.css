@@ -1,5 +1,17 @@
 .layout {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 0rem 0rem;
+    
+}
+
+.header-layout {
+    
+}
+
+.main-layout {
+    min-height: 100vh;
+}
+
+
+.footer-layout {
+    background: linear-gradient(var(--black-dark2),var(--black-dark6));
+    color: var(--white3);
 }
