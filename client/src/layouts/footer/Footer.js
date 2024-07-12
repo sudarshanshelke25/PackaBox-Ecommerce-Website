@@ -7,11 +7,13 @@ import CategoryLinks from './CategoryLinks';
 import AccountLinks from './AccountLinks';
 import QuickLinks from './QuickLinks';
 import LegalLinks from './LegalLinks';
+import NavLogo from '../header/NavLogo';
 
 const Footer = () => {
   return (
     <section className='footer-container'>
       <div className='footer'>
+        <NavLogo/>
         <div className='footer-main'>
           <FooterInfo/>
           <QuickLinks/>

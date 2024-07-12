@@ -5,7 +5,7 @@ const LegalLinks = () => {
   return (
     <div className='footer-col social-links'>
         <h5 className='section-title'>
-            Legal & Support
+            Legal Support
         </h5>
         <ul className='footer-links'>
             <li>

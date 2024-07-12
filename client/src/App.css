@@ -3,15 +3,67 @@
 }
 
 .header-layout {
-    
+    min-height: 10vh;
 }
 
 .main-layout {
-    min-height: 100vh;
+    min-height: 92vh;
 }
 
 
 .footer-layout {
     background: linear-gradient(var(--black-dark2),var(--black-dark6));
     color: var(--white3);
+}
+
+
+.pnf {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0rem 0rem;
+}
+
+.pnf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.pnf-title {
+    font-size: 10rem;
+    font-weight: 800;
+    color: var(--black-dark2);
+    transition: 0.3s;
+}
+
+.pnf-heading {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    color: var(--black-dark2);
+    transition: 0.3s;
+}
+
+.pnf-button {
+    padding-block: 0.4rem;
+    padding-inline: 2rem ;
+    border: 2px solid var(--black-dark4);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white3);
+    background-color: var(--black-dark4);
+    transition: 0.3s;
+}
+
+.pnf-button:hover {
+    background-color: var(--black-dark2);
+    border: 2px solid var(--black-dark2);
+    color: var(--white3);
+}
+
+.pnf-title:hover, 
+.pnf-heading:hover {
+    color: var(--black-dark4);
 }
