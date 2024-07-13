@@ -3,8 +3,8 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import connectDB from './config/mongoose.js';
-import authRoutes from './routes/authRoute.js'
-
+import authRoutes from './routes/authRoute.js';
+import cors from 'cors';
 
 // Configure ENV
 dotenv.config();
@@ -16,6 +16,7 @@ connectDB();
 const app = express();
 
 // MIDDLEWARE
+app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { GoSearch } from "react-icons/go";
 
 const NavSearch = () => {
   return (
@@ -6,7 +7,7 @@ const NavSearch = () => {
         <div className='nav-search'>
             <input className='search-field' type="text" name="search-field" placeholder='search products here...'/>
             <button className='search-button' type="button">
-              Search
+            <GoSearch />
             </button>
         </div>
     </>

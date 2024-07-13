@@ -1,0 +1,128 @@
+.login, .signup {
+    height: 100vh;
+    width: 70vh;
+    padding-block: 7rem 2rem;
+    padding-inline: 1rem;
+    /* border: 2px dashed var(--black-dark4); */
+    /* border-radius: 18px; */
+    background-color: var(--white);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), -2px 0px 50px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 0;
+}
+
+:is(.login, .signup) div {
+    margin-bottom: 1rem;
+}
+
+:is(.login, .signup) .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+:is(.login, .signup) .subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.form-header {
+    height: 16vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-main {
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    
+    /* justify-content: center; */
+}
+
+.form-footer {
+    height: 10vh;
+    text-align: center;
+}
+
+.forgot {
+    margin-top: 1.5rem;
+    position: relative;
+    left: 70%;
+}
+
+.forgot-link {
+    color: var(--black-dark4);
+}
+
+
+.input-field label {
+    position: relative;
+    top: -4px;
+    font-size: 1rem;
+
+}
+
+.input-field input {
+    width: 320px;
+    padding-block: 0.4rem;
+    padding-inline: 0.8rem;
+    border: 2px solid var(--white);
+    outline: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    background-color: var(--white);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.input-field input:hover{
+    border: 2px solid var(--black-dark4);
+}
+
+.input-field input::placeholder{
+    font-size: 1rem;
+}
+
+.password-icon {
+    position: absolute;
+    right: 74px;
+    padding-block: 0.4rem;
+    color: var(--black-dark3);
+}
+
+.input-button .button{
+    width: 320px;
+    padding-block: 0.4rem;
+    padding-inline: 0.8rem;
+    border: 2px solid var(--black-dark3);
+    border-radius: 8px;
+    background-color: var(--black-dark3);
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-button .login-btn{
+    margin-top: 1rem;
+}
+
+.input-button .signup-btn{
+    margin-top: 2.5rem;
+}
+
+.input-button .button:hover {
+    background-color: var(--black-dark2);
+    border: 2px solid var(--black-dark2);
+}
+
+.auth-text {
+    font-size: 1rem;
+}
+.auth-link {
+    font-size: 1.1rem;
+}

@@ -5,7 +5,7 @@ import NavAuth from './NavAuth';
 import './header.css';
 
 
-const Header = () => {
+const Header = ({}) => {
   return (
     <section className='header-container'>
       <div className='header'>

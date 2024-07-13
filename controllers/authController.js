@@ -17,12 +17,12 @@ export const signupController = async(req, res) => {
         if (!password){
             return res.send({message:'Password is Required'});
         }
-        if (!phone){
-            return res.send({message:'Phone is Required'});
-        }
-        if (!address){
-            return res.send({message:'Address is Required'});
-        }
+        // if (!phone){
+        //     return res.send({message:'Phone is Required'});
+        // }
+        // if (!address){
+        //     return res.send({message:'Address is Required'});
+        // }
 
         // Get Exesting User
         const existingUser = await User.findOne({email});
@@ -71,7 +71,7 @@ export const loginController = async(req, res) => {
 
         // Validation For LogIn
         if (!email || !password){
-            return res.status(401).send({
+            return res.status(200).send({
                 success: false,
                 message: 'Invalid User Email or Password, Please Try Again!'
             });
@@ -82,7 +82,7 @@ export const loginController = async(req, res) => {
 
         // Check User Info
         if (!user){
-            return res.status(401).send({
+            return res.status(200).send({
                 success: false,
                 message: 'User not SignUp yet, Please SignUp'
             });
@@ -93,7 +93,7 @@ export const loginController = async(req, res) => {
 
         // Check User Password
         if (!match){
-            return res.status(401).send({
+            return res.status(200).send({
                 success: false,
                 message: 'Invalid User Password, Please Try Again!'
             });
