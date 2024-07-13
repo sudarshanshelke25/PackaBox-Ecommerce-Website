@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import { FaCartShopping, FaCircleUser, FaHouseChimney } from "react-icons/fa6";
 import { IoStorefront } from "react-icons/io5";
+import { GoArchive, GoPerson } from "react-icons/go";
 
 const NavAuth = () => {
   return (
@@ -14,19 +14,19 @@ const NavAuth = () => {
             </li> */}
             <li className='auth-item'>
                 <NavLink to='/login' className='auth-link'>
-                    <i className='icon'><FaCircleUser /></i>
+                    <i className='icon'><GoPerson /></i>
                     <span className='text'> LogIn</span>
                 </NavLink>
             </li>
             <li className='auth-item'>
                 <NavLink to='/signup' className='auth-link'>
-                    <i className='icon'><FaCircleUser /></i>
+                    <i className='icon'><GoPerson /></i>
                     <span className='text'> SignUp</span>
                 </NavLink>
             </li>
             <li className='auth-item'>
                 <NavLink to='/cart' className='auth-link'>
-                    <i className='icon'><FaCartShopping /></i>
+                    <i className='icon'><GoArchive /></i>
                     <span className='text'>  Cart</span>
                 </NavLink>
             </li>
