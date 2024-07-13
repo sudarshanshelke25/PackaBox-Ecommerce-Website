@@ -7,11 +7,13 @@ import axios from 'axios';
 
 
 const Signup = () => {
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
 
   // handle SignUp Submit Function
   const handleSubmit = async (event) => {
@@ -42,6 +44,7 @@ const Signup = () => {
     setShowPassword(!showPassword);
   }
 
+  
   return (
     <Layout 
       title='PackaBox - Sign Up'

@@ -4,12 +4,17 @@ import './auth.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { GoEye, GoEyeClosed, GoShieldCheck } from 'react-icons/go';
 import axios from 'axios';
+import { useAuth } from '../context/auth';
+
 
 const Login = () => {
+
+  const [auth, setAuth] = useAuth();
   const [email,setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
 
   // handle submit function
   const handleSubmit = async (event) => {
@@ -24,7 +29,16 @@ const Login = () => {
 
       if (res.data.success){
         alert(`${res.data.message}`);
+        // set User data to Auth Context
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        // Save Auth Context in Local Storage
+        localStorage.setItem('auth', JSON.stringify(res.data));
         navigate('/');
+        
       } else {
         alert(`${res.data.message}`);
       }
@@ -39,6 +53,7 @@ const Login = () => {
   const toggleShowPassword = async (event) => {
     setShowPassword(!showPassword);
   }
+
 
   return (
     <Layout
