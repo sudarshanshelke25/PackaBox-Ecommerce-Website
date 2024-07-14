@@ -4,6 +4,7 @@ import { useAuth } from '../context/auth'
 
 const Home = () => {
   const [auth, setAuth] = useAuth({});
+  
   return (
     <Layout>
       <main className='page'>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from './../layouts/Layout';
 import './auth.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoEye, GoEyeClosed, GoShieldCheck } from 'react-icons/go';
 import axios from 'axios';
 import { useAuth } from '../context/auth';
@@ -10,10 +10,11 @@ import { useAuth } from '../context/auth';
 const Login = () => {
 
   const [auth, setAuth] = useAuth();
-  const [email,setEmail] = useState('');
+  const [email,setEmail] = useState('sudarshanshelke@gmail.com');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
 
   // handle submit function
@@ -37,8 +38,8 @@ const Login = () => {
         });
         // Save Auth Context in Local Storage
         localStorage.setItem('auth', JSON.stringify(res.data));
-        navigate('/');
-        
+        navigate(location.state || '/');
+
       } else {
         alert(`${res.data.message}`);
       }
@@ -61,7 +62,7 @@ const Login = () => {
       description='Log in to PackaBox, your go-to ecommerce platform, for a personalized shopping experience. Access your account to track orders, manage preferences, and enjoy exclusive deals. Sign in now to get started!'
       keywords='PackaBox ecommerce login, online shopping login, ecommerce account access, secure ecommerce login, log in to PackaBox, manage ecommerce orders, PackaBox sign in, ecommerce account login, track orders online, exclusive ecommerce deals login, ecommerce deals and discounts, join PackaBox ecommerce'
     >
-      <section className='login'>
+      <section className='auth login'>
         <div className='form-header login-header'>
           <h1 className='title'>Welcome back!</h1>
           <h2 className='subtitle'><GoShieldCheck /> Log In to access your account!</h2>
@@ -74,7 +75,7 @@ const Login = () => {
               placeholder='you@example.com' 
               value={email}
               onChange={(event)=> setEmail(event.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -84,7 +85,7 @@ const Login = () => {
               placeholder='Your Password' 
               value={password}
               onChange={(event)=> setPassword(event.target.value)}
-              // required
+              required
             />
             <span className='password-icon' onClick={toggleShowPassword}>
               {showPassword? <GoEye />:<GoEyeClosed />}

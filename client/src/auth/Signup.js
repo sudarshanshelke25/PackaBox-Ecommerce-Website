@@ -44,14 +44,14 @@ const Signup = () => {
     setShowPassword(!showPassword);
   }
 
-  
+
   return (
     <Layout 
       title='PackaBox - Sign Up'
       description='Join PackaBox, your ultimate destination for ecommerce solutions. Sign up today to explore a world of premium products, seamless shopping experiences, and exclusive offers. Start shopping smarter with PackaBox!'
       keywords='PackaBox ecommerce sign up, online shopping sign up, ecommerce account registration, exclusive ecommerce offers,  secure online shopping, premium ecommerce products, ecommerce membership benefits, start shopping online, ecommerce deals and discounts,join PackaBox ecommerce'
     >
-      <section className='signup'>
+      <section className='auth signup'>
         <div className='form-header signup-header'>
           <h1 className='title'>Join us today!</h1>
           <h2 className='subtitle'><GoShieldLock /> Sign Up to create your account!</h2>
@@ -65,7 +65,7 @@ const Signup = () => {
               placeholder='Your Name' 
               value={name}
               onChange={(event)=> setName(event.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -75,7 +75,7 @@ const Signup = () => {
               placeholder='you@example.com' 
               value={email}
               onChange={(event)=> setEmail(event.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -85,7 +85,7 @@ const Signup = () => {
               placeholder='Your Password' 
               value={password}
               onChange={(event)=> setPassword(event.target.value)}
-              // required
+              required
             />
             <span className='password-icon' onClick={toggleShowPassword}>
               {showPassword? <GoEye />:<GoEyeClosed />}

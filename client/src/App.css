@@ -32,18 +32,18 @@
 }
 
 .pnf-logo {
-    font-size: 12rem;
+    font-size: 10rem;
     font-weight: 300;
     color: var(--white3);
     position: absolute;
     right: 50%x;
-    top: 22%;
+    top: 25%;
     z-index: 1;
 }
 
 
 .pnf-title {
-    font-size: 15rem;
+    font-size: 12rem;
     font-weight: 800;
     color: var(--black-dark4);
     transition: 0.3s;

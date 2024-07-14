@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { FaCartShopping, FaCircleUser, FaHouseChimney } from "react-icons/fa6";
+import { FaCircleUser } from "react-icons/fa6";
 import { IoStorefront } from "react-icons/io5";
 
 const NavHome = () => {

@@ -1,4 +1,5 @@
-.login, .signup {
+/* .login, .signup , */
+.auth{
     height: 100vh;
     width: 70vh;
     padding-block: 7rem 2rem;
@@ -13,61 +14,112 @@
     margin: 0;
 }
 
-:is(.login, .signup) div {
+.account {
+    width: 60vh;
+    padding-block: 4rem 2rem;
+    padding-inline: 1.5rem;
+}
+
+.account-container {
+    width: 55vh;
+    padding-block: 4rem 2rem;
+    padding-inline: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.auth div {
     margin-bottom: 1rem;
 }
 
-:is(.login, .signup) .title {
+.auth .title {
     font-size: 1.8rem;
     font-weight: 600;
 }
 
-:is(.login, .signup) .subtitle {
+
+.auth .subtitle {
     font-size: 1.2rem;
     font-weight: 400;
 }
 
-.form-header {
+.auth .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.account .user-cover img{
+    height: 55px;
+    width: 55px;
+    border: 2px solid var(--black-dark5);
+    border-radius: 50%;
+}
+
+
+.account .title {
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.account .subtitle {
+    font-size: 0.9rem;
+}
+
+.auth .form-header {
     height: 16vh;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.form-main {
+.account .form-header{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.account .user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.auth .form-main {
     height: 54vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-    
-    /* justify-content: center; */
+}
+.account .form-main {
+    align-items: flex-start;
 }
 
-.form-footer {
+.auth .form-footer {
     height: 10vh;
     text-align: center;
 }
 
-.forgot {
+.auth .forgot {
     margin-top: 1.5rem;
     position: relative;
     left: 70%;
 }
 
-.forgot-link {
+.auth .forgot-link {
     color: var(--black-dark4);
 }
 
-
-.input-field label {
+.auth .input-field label {
     position: relative;
     top: -4px;
     font-size: 1rem;
-
 }
 
-.input-field input {
+.auth .input-field input {
     width: 320px;
     padding-block: 0.4rem;
     padding-inline: 0.8rem;
@@ -80,22 +132,22 @@
     position: relative;
 }
 
-.input-field input:hover{
+.auth .input-field input:hover{
     border: 2px solid var(--black-dark4);
 }
 
-.input-field input::placeholder{
+.auth .input-field input::placeholder{
     font-size: 1rem;
 }
 
-.password-icon {
+.auth .password-icon {
     position: absolute;
     right: 74px;
     padding-block: 0.4rem;
     color: var(--black-dark3);
 }
 
-.input-button .button{
+.auth .input-button .button{
     width: 320px;
     padding-block: 0.4rem;
     padding-inline: 0.8rem;
@@ -107,22 +159,87 @@
     transition: 0.3s;
 }
 
-.input-button .login-btn{
+.auth .input-button .login-btn{
     margin-top: 1rem;
 }
 
-.input-button .signup-btn{
+.auth .input-button .signup-btn{
     margin-top: 2.5rem;
 }
 
-.input-button .button:hover {
+.auth .input-button .button:hover {
     background-color: var(--black-dark2);
     border: 2px solid var(--black-dark2);
 }
 
-.auth-text {
+.auth .auth-text {
     font-size: 1rem;
 }
-.auth-link {
+.auth .auth-link {
     font-size: 1.1rem;
+}
+
+.auth .account-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: baseline;
+    gap: 0.3rem;
+}
+
+.auth .account-links {
+    .active {
+        color: var(--black-dark2);
+    }
+}
+
+.account-item {
+    list-style: none;
+    transition: 0.3;
+    width: 100%;
+    padding-block: 0.3rem 0.4rem;
+    padding-inline: 0.5rem;
+    margin-inline: 0.5rem;
+    border-radius: 8px;
+}
+.account-link::before{
+    position: absolute;
+    content: "";
+    top: -10px ;
+    left: -7px ;
+    height: 0%;
+    width: 5px;
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--black-dark5);
+    transition: 0.3s;
+}
+
+.account-item:hover {
+    background-color: var(--white3);
+    .account-link{
+        color: var(--blue-hover);
+    }
+    .account-link::before{
+        height: 172%;
+    }
+}
+
+.account-link {
+    color: var(--black-dark3);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.account-link .icon {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0rem 0.5rem;
+}
+
+.account-link .text {
+    margin-inline: 1rem;
+}
+
+.account-link .wishlist-icon {
+    font-size: 1.5rem;
 }

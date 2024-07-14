@@ -57,7 +57,7 @@
 }
 
 .footer-links a:hover {
-    color: var(--blue);
+    color: var(--blue-light);
     font-weight: 400;
 }
 
