@@ -140,3 +140,8 @@ export const testController = (req, res) => {
         message: 'Protected Routes Based on JWT Token'
     });
 }
+
+// Forgot Password Controller
+export const forgotPasswordController = async(req, res) => { 
+
+}
