@@ -18,23 +18,47 @@ const NavAuth = () => {
             </li> */}
             {
                 !auth.user ? (<>
-                    <li className='auth-item'>
+                    <li className='auth-item nav-item'>
                         <NavLink to='/login' className='auth-link nav-link'>
                             <i className='icon'><GoPerson /></i>
                             <span className='text'> LogIn</span>
                         </NavLink>
                     </li>
-                    <li className='auth-item'>
+                    <li className='auth-item nav-item'>
                         <NavLink to='/signup' className='auth-link nav-link'>
                             <i className='icon small-icon'><GoPersonAdd /></i>
                             <span className='text'> SignUp</span>
                         </NavLink>
                     </li>
+                    <li className='auth-item nav-item'>
+                        <NavLink to='/wishlist' className='auth-link nav-link'>
+                            <i className='icon small-icon'><GoHeart /></i>
+                            <span className='text'> Wishlist</span>
+                        </NavLink>
+                    </li>
+                    <li className='auth-item nav-item'>
+                        <NavLink to='/cart' className='auth-link nav-link'>
+                            <i className='icon'><GoArchive /></i>
+                            <span className='text'>  Cart</span>
+                        </NavLink>
+                    </li>
                 </>) : (<>
-                    <li className='auth-item'>
+                    <li className='auth-item nav-item'>
                         <NavLink to='/account' className='auth-link user-name nav-link'>
                             <i className='icon'><VscAccount /></i>
                             <span className='text'> {auth.user.name}</span>
+                        </NavLink>
+                    </li>
+                    <li className='auth-item nav-item'>
+                        <NavLink to='/wishlist' className='auth-link nav-link'>
+                            <i className='icon small-icon'><GoHeart /></i>
+                            <span className='text'></span>
+                        </NavLink>
+                    </li>
+                    <li className='auth-item nav-item'>
+                        <NavLink to='/cart' className='auth-link nav-link'>
+                            <i className='icon'><GoArchive /></i>
+                            <span className='text'>  Cart</span>
                         </NavLink>
                     </li>
                     {/* <li className='auth-item'>
@@ -45,18 +69,7 @@ const NavAuth = () => {
                     </li> */}
                 </>)
             }
-            <li className='auth-item'>
-                <NavLink to='/cart' className='auth-link nav-link'>
-                    <i className='icon small-icon'><GoHeart /></i>
-                    <span className='text'>  Wishlist</span>
-                </NavLink>
-            </li>
-            <li className='auth-item'>
-                <NavLink to='/cart' className='auth-link nav-link'>
-                    <i className='icon'><GoArchive /></i>
-                    <span className='text'>  Cart</span>
-                </NavLink>
-            </li>
+            
         </div>
     </>
   );

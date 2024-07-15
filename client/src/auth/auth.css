@@ -204,15 +204,35 @@
     margin-inline: 0.5rem;
     border-radius: 8px;
 }
+
+.active .account-item {
+    background-color: var(--white3);
+    .account-link{
+        color: var(--blue-hover);
+    }
+}
+
 .account-link::before{
     position: absolute;
     content: "";
-    top: -10px ;
-    left: -7px ;
-    height: 0%;
-    width: 5px;
-    border-radius: 8px 0px 0px 8px;
-    background-color: var(--black-dark5);
+    top: -9.5px ;
+    left: -7.5px ;
+    height: 0;
+    width: 2px;
+    /* border-radius: 6px 0px 0px 6px; */
+    background-color: var(--black-dark4);
+    transition: 0.3s;
+}
+
+.active.account-link::before{
+    position: absolute;
+    content: "";
+    top: -8px ;
+    left: -7.5px ;
+    height: 44px;
+    width: 2px;
+    /* border-radius: 6px 0px 0px 6px; */
+    background-color: var(--black-dark4);
     transition: 0.3s;
 }
 
@@ -222,7 +242,7 @@
         color: var(--blue-hover);
     }
     .account-link::before{
-        height: 45px;
+        height: 44px;
     }
 }
 
@@ -235,7 +255,7 @@
 .account-link .icon {
     font-size: 1.4rem;
     font-weight: 700;
-    padding: 0rem 0.5rem;
+    padding: 0rem 0.4rem;
 }
 
 .account-link .text {

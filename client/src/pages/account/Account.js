@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from './../../layouts/Layout';
 import AccountMenu from '../../components/Account/AccountMenu';
+import './account.css';
+
 
 const Account = ({children, title, description, keywords, author}) => {
   return (

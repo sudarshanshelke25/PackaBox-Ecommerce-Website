@@ -6,9 +6,11 @@ const Profile = () => {
     <Account
         title='Your Profile - PackaBox'
     >
-        <div className='main-container profile-container'>
-            Profile
-        </div>
+        <section className='section-container profile-container'>
+            <div className='section-header'>
+                profile
+            </div>
+        </section>
     </Account>
   );
 };

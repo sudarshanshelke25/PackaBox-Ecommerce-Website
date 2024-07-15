@@ -6,22 +6,22 @@ import {Helmet} from "react-helmet";
 const Layout = ({children, title, description, keywords, author}) => {
   return (
     <>
-        <Helmet>
-          <title>{title}</title>
-          <meta charSet="UTF-8" />
-          <meta name="description" content={description} />
-          <meta name="keywords" content={keywords} />
-          <meta name="author" content={author} />
-        </Helmet>
-        <header className='layout header-layout'>
-          <Header/>
-        </header>
-        <main className='layout main-layout'>
-          {children}
-        </main>
-        <footer className='layout footer-layout'>
-          <Footer/>
-        </footer>
+      <Helmet>
+        <title>{title}</title>
+        <meta charSet="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content={author} />
+      </Helmet>
+      <header className='layout header-layout'>
+        <Header/>
+      </header>
+      <main className='layout main-layout'>
+        {children}
+      </main>
+      <footer className='layout footer-layout'>
+        <Footer/>
+      </footer>
     </>
   );
   

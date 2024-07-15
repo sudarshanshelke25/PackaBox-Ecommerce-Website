@@ -15,7 +15,7 @@
 
 .nav-logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: baseline;
     gap: 0.5rem;
 }
@@ -46,7 +46,7 @@
     min-width: 300px;
     padding-block: 0rem;
     padding-inline: 0rem;
-    border: 2px solid var(--white);
+    border: 1.5px solid var(--white);
     outline: none;
     border-radius: 8px;
     transition: 0.3s;
@@ -72,7 +72,7 @@
 }
 
 .search-button {
-    padding-block: 0.1rem;
+    padding-block: 0.2rem;
     padding-inline: 1rem ;
     font-size: 1.2rem;
     color: var(--black-dark4);
@@ -104,7 +104,6 @@
 
     .active {
         background-color: var(--white3);
-        /* color: var(--blue-hover); */
         color: var(--blue-active);
         border-radius: 6px;
     }
@@ -151,7 +150,25 @@
 }
 
 .auth-link .small-icon {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+}
+
+.active.nav-link::before {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    height: 1.5px;
+    width: 100%;
+    background-color: var(--black-dark4);
+    transition: 0.3s;  
+    z-index: 11;
+}
+
+
+.nav-item {
+    background-color: var(--white3);
+    border-radius: 6px;
 }
 
 .nav-link::after {

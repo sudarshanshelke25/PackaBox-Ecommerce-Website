@@ -1,0 +1,12 @@
+
+.section-container {
+    width: 100%;
+    min-height: 90vh;
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+.section-header {
+    height: 10vh;
+    background-color: var(--white3);
+}
