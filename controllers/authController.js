@@ -116,6 +116,7 @@ export const loginController = async(req, res) => {
                 cart:user.cart,
                 orders:user.orders,
                 wishlist:user.wishlist,
+                role:user.role,
             },
             token,
         });
