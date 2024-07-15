@@ -118,16 +118,13 @@ export const loginController = async(req, res) => {
                 wishlist:user.wishlist,
             },
             token,
-        })
-
-
-
+        });
 
     } catch (error) {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in User LogIn please Try Again!',
+            message: 'Error in User LogIn, please Try Again!',
             error,
         });
     }
@@ -143,5 +140,58 @@ export const testController = (req, res) => {
 
 // Forgot Password Controller
 export const forgotPasswordController = async(req, res) => { 
+    
+    try {
+        const {email, newPassword, confirmPassword} = req.body;
 
+        // Validation For Forgot Password
+        if (!email){
+            return res.send({message:'Email is Required'});
+        }
+        if (!newPassword){
+            return res.send({message:'New password is Required'});
+        }
+        if (!confirmPassword){
+            return res.send({message:'Confirom password is Required'});
+        }
+
+        // Get User Info
+        const user = await User.findOne({email})
+
+        // Check User Info
+        if (!user){
+            return res.status(404).send({
+                success: false,
+                message: 'Invalid User Email, Please Try Again!'
+            });
+        }
+
+        // Compair newPassword and confirmPassword
+        if (newPassword===confirmPassword){
+            return res.status(401).send({
+                success: false,
+                message: 'Invalid User Password, Please Try Again!'
+            });
+        }
+
+        // Incrypt User Password
+        const hashedPassword = await hashPassword(newPassword);
+
+        // Update User Password
+        await User.findByIdAndUpdate( user._id, { password:hashPassword});
+
+
+        res.status(200).send({
+            success: true,
+            message: 'Password Reset Successfully',
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Reset Password, please Try Again!',
+            error,
+        });
+    }
 }
