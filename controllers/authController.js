@@ -31,7 +31,7 @@ export const signupController = async(req, res) => {
         if (existingUser){
             return res.status(200).send({
                 success: true,
-                message: 'User already SignUp, Please LogIn',
+                message: 'User already Sign Up, Please LogIn',
                 existingUser,
             })
         }
@@ -50,7 +50,7 @@ export const signupController = async(req, res) => {
 
         res.status(201).send({
             success:true,
-            message:'User SignUp Successfully',
+            message:'User Sign Up Successfully',
             user,
         })
 
@@ -58,7 +58,7 @@ export const signupController = async(req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in User SignUp, Please Try Again!',
+            message: 'Error in User Sign Up, Please Try Again!',
             error,
         });  
     }
@@ -84,7 +84,7 @@ export const loginController = async(req, res) => {
         if (!user){
             return res.status(200).send({
                 success: false,
-                message: 'User not SignUp yet, Please SignUp'
+                message: 'Email not Sign Up yet, Please Sign Up'
             });
         }
 
@@ -106,7 +106,7 @@ export const loginController = async(req, res) => {
 
         res.status(200).send({
             success: true,
-            message: 'User LogIn Successfully',
+            message: 'User Log In Successfully',
             user: {
                 id:user._id,
                 name:user.name,
@@ -124,7 +124,7 @@ export const loginController = async(req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in User LogIn, please Try Again!',
+            message: 'Error in User Log In, please Try Again!',
             error,
         });
     }

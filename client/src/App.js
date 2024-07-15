@@ -5,9 +5,17 @@ import Login from './auth/Login';
 import Signup from './auth/Signup';
 import Forgot from './auth/Forgot';
 import PageNotFound from './pages/PageNotFound';
-import Account from './auth/Account';
 import PrivateRoute from './components/Routes/Private';
-import Dashboard from './pages/Dashboard';
+
+import Account from './pages/account/Account';
+import Profile from './pages/account/Profile';
+import Orders from './pages/account/Orders';
+import Address from './pages/account/Address';
+import Wishlist from './pages/account/Wishlist';
+import Payment from './pages/account/Payment';
+import Reviews from './pages/account/Reviews';
+import ContactUs from './pages/account/ContactUs';
+import Settings from './pages/account/Settings';
 
 
 function App() {
@@ -15,14 +23,24 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<PrivateRoute />}>
-          <Route path="" element={<Dashboard />} />
-        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         {/* <Route path="/cart" element={<Home />} /> */}
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/account" element={<Account />} />
+
+        {/* Account Route */}
+        <Route path="/account" element={<PrivateRoute />}>
+          <Route path="" element={<Account />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="address" element={<Address />} />
+          <Route path="wishlist" element={<Wishlist />} />
+          <Route path="payments" element={<Payment />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="contactus" element={<ContactUs />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

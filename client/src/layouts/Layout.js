@@ -3,7 +3,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import {Helmet} from "react-helmet";
 
-const Layout = ({children, title, description, keywords, author }) => {
+const Layout = ({children, title, description, keywords, author}) => {
   return (
     <>
         <Helmet>

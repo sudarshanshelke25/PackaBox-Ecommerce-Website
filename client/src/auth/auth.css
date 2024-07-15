@@ -15,7 +15,7 @@
 }
 
 .account {
-    width: 60vh;
+    width: 55vh;
     padding-block: 4rem 2rem;
     padding-inline: 1.5rem;
 }
@@ -25,7 +25,8 @@
     padding-block: 4rem 2rem;
     padding-inline: 1.5rem;
     position: absolute;
-    top: 10px;
+    position:sticky;
+    top: 50px;
     right: 30px;
 }
 
@@ -187,10 +188,11 @@
     gap: 0.3rem;
 }
 
-.auth .account-links {
-    .active {
-        color: var(--black-dark2);
-    }
+.auth .account-links .active {
+    color: var(--blue-active);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .account-item {
@@ -220,7 +222,7 @@
         color: var(--blue-hover);
     }
     .account-link::before{
-        height: 172%;
+        height: 45px;
     }
 }
 
@@ -238,6 +240,7 @@
 
 .account-link .text {
     margin-inline: 1rem;
+    transition: 0.3;
 }
 
 .account-link .wishlist-icon {

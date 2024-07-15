@@ -1,6 +1,6 @@
-.layout {
+/* .layout {
     
-}
+} */
 
 .header-layout {
     min-height: 10vh;
@@ -10,12 +10,11 @@
     min-height: 90vh;
 }
 
-
 .footer-layout {
     background: linear-gradient(var(--black-dark2),var(--black-dark6));
     color: var(--white3);
+    width: 100vw;
 }
-
 
 .pnf {
     max-width: var(--max-width);
@@ -40,7 +39,6 @@
     top: 25%;
     z-index: 1;
 }
-
 
 .pnf-title {
     font-size: 12rem;
