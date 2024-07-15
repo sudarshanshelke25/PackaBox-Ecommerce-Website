@@ -30,7 +30,7 @@ const Signup = () => {
         alert(`${res.data.message}`);
         navigate('/login');
       } else {
-        alert(`${res.error.message}`);
+        alert(`${res.data.message}`);
       }
       
     } catch (error) {

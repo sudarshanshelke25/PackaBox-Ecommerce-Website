@@ -167,7 +167,7 @@ export const forgotPasswordController = async(req, res) => {
         }
 
         // Compair newPassword and confirmPassword
-        if (newPassword===confirmPassword){
+        if (newPassword!==confirmPassword){
             return res.status(401).send({
                 success: false,
                 message: 'Invalid User Password, Please Try Again!'
@@ -178,8 +178,7 @@ export const forgotPasswordController = async(req, res) => {
         const hashedPassword = await hashPassword(newPassword);
 
         // Update User Password
-        await User.findByIdAndUpdate( user._id, { password:hashPassword});
-
+        await User.findByIdAndUpdate( user._id, { password:hashedPassword});
 
         res.status(200).send({
             success: true,
