@@ -1,9 +1,10 @@
-import slugify from "slugify";
 import Sector from "../models/sectorModel.js";
+import slugify from "slugify";
 
 // Create Sector Controller
 export const createSectorController = async (req, res) => {
     try {
+        // Get Name Form Request
         const {name} = req.body;
 
         // Validation for Sector
@@ -20,6 +21,7 @@ export const createSectorController = async (req, res) => {
             return res.status(200).send({
                 success: true,
                 message: `${existingSector.name}, Sector Already Exists!`,
+                existingSector,
             });
         }
 
@@ -55,7 +57,29 @@ export const getSectorController = async (req, res) => {
 
 // Update Sector Controller
 export const updateSectorController = async (req, res) => {
+    try {
+        // Get Name Form Request Body
+        const {name} = req.body;
+        // Get ID Form Request Params
+        const {id} = req.params;
 
+         // Find Sector By ID and Update
+        const sector = await Sector.findByIdAndUpdate(id, {name, slug:slugify(name)},{new:true});
+
+        res.status(200).send({
+            success: true,
+            message: `${sector.name}, Sector Updated`,
+            sector,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Update Sector!',
+            error,
+        });
+    }
 };
 
 // Create Sector Controller
