@@ -90,7 +90,27 @@ export const getAllCategoryController = async (req, res) => {
 
 // Get One Category Controller
 export const getCategoryController = async (req, res) => {
+    try {
+        // Get Slug From Request Params
+        const {slug} = req.params;
 
+        // Get Single Categories
+        const category = await Category.findOne({slug});
+
+        res.status(200).send({
+            success: true,
+            message: `Get a ${category.name} Category info`,
+            category,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Get Single Categories!`,
+            error,
+        });
+    }
 }
 
 // Update Category Controller
