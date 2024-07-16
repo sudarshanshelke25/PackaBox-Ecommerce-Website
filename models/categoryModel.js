@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const sectorSchema = new mongoose.Schema(
+const categorySchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -11,18 +11,17 @@ const sectorSchema = new mongoose.Schema(
             type: String,
             lowercase: true,
         },
-        categories: [
-            {
-                type: mongoose.Schema.ObjectId,
-                ref: 'Category',
-            }
-        ],
+        sector: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Sector',
+            required: true,
+        },
+        cover: {
+            data: Buffer,
+            contentType: String,
+        }
     },
     {
         timestamps: true,
     }
 );
-
-const Sector = mongoose.model('Sector', sectorSchema);
-
-export default Sector;
