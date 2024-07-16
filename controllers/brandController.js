@@ -78,7 +78,58 @@ export const getBrandController = async (req, res) => {
 
 // Update Brand Controller
 export const updateBrandController = async (req, res) => {
-    
+    try {
+        // Get Brand Data From Request Fields
+        const {name, slug, category}= req.fields;
+        // Get Brand Logo Image From Request Files
+        const {logo}= req.files;
+        // Get Brand ID From Request Params
+        const {id} = req.params;
+
+
+        // Validation for Brand
+        if (!name) {
+            return res.status(401).send({
+                message: `Brand Name is required!`,
+            });
+        }
+
+        if (!category ) {
+            return res.status(401).send({
+                message: `Brand Category is required!`,
+            });
+        }
+
+        if (!logo && logo.size >10000) {
+            return res.status(401).send({
+                message: `Brand Logo is required! & Should be less than 10MB!`,
+            });
+        }
+        
+        // Find By Id And Update Brand
+        const brand = await Brand.findByIdAndUpdate(id, {...req.fields, slug:slugify(name)}, {new:true});
+        // Set Logo Path and Data Type
+        if (logo) {
+            brand.logo.data = fs.readFileSync(logo.path);
+            brand.logo.contentType = logo.type;
+        }
+        await brand.save();
+
+        res.status(201).send({
+            success: true,
+            message: `${brand.name}, Brand Updated`,
+            brand,
+        });
+
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Update Brand!`,
+            error,
+        });
+    }
 }
 
 // Delete Brand Controller
