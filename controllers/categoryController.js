@@ -142,7 +142,7 @@ export const updateCategoryController = async (req, res) => {
             });
         }
 
-        // Update New Category
+        // Find By Id And Update Category
         const category = await Category.findByIdAndUpdate(id, {...req.fields, slug:slugify(name)}, {new:true});
         // Set Cover Path and Data Type
         if (cover) {
@@ -151,7 +151,7 @@ export const updateCategoryController = async (req, res) => {
         }
         category.save();
 
-        res.status(201).send({
+        res.status(204).send({
             success: true,
             message: `${category.name}, Category Updated`,
             category,
@@ -170,7 +170,27 @@ export const updateCategoryController = async (req, res) => {
 
 // Delete Category Controller
 export const deleteCategoryController = async (req, res) => {
+    try {
+        // Get Category ID From Request Params
+        const {id} = req.params;
 
+        // Find By Id And Update Category
+        const category = await Category.findByIdAndDelete(id);
+
+        res.status(200).send({
+            success: true,
+            message: `${category.name}, Category Deleted`,
+            category,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Delete Category!`,
+            error,
+        });
+    }
 }
 
 
