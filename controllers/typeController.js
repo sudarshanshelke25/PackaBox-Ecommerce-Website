@@ -172,5 +172,25 @@ export const updateTypeController = async (req, res) => {
 
 // Delete Type Controller
 export const deleteTypeController = async (req, res) => {
-    
+    try {
+        // Get Type ID From Request Params
+        const {id} = req.params;
+
+        // Find By Id And Delete Type
+        const type = await Type.findByIdAndDelete(id);
+
+        res.status(200).send({
+            success: true,
+            message: `${type.name}, Type Deleted`,
+            type,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Delete Type!`,
+            error,
+        });
+    }
 }
