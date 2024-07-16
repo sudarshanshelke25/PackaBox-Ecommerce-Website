@@ -90,7 +90,27 @@ export const getAllBrandController = async (req, res) => {
 
 // Get One Brand Controller
 export const getBrandController = async (req, res) => {
-    
+    try {
+        // Get Slug From Request Params
+        const {slug} = req.params;
+
+        // Get Single Brand
+        const brand = await Brand.findOne({slug});
+
+        res.status(200).send({
+            success: true,
+            message: `Get a ${brand.name} Brand info`,
+            brand,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get Single Brand!',
+            error,
+        });
+    }
 }
 
 // Update Brand Controller
