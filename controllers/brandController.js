@@ -68,7 +68,24 @@ export const createBrandController = async (req, res) => {
 
 // Get All Brand Controller
 export const getAllBrandController = async (req, res) => {
-    
+    try {
+        // Get All Brands
+        const brand = await Brand.find({}).sort({ createdAt: 1});
+
+        res.status(200).send({
+            success: true,
+            message: 'Get All Brands List',
+            brand,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get All Brands!',
+            error,
+        });
+    }
 }
 
 // Get One Brand Controller
