@@ -60,7 +60,8 @@ export const getAllSectorController = async (req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in Get All Sectors!'
+            message: 'Error in Get All Sectors!',
+            error,
         });
     }
 };
@@ -84,7 +85,8 @@ export const getSectorController = async (req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in Get Single Sector!'
+            message: 'Error in Get Single Sector!',
+            error,
         });
     }
 };

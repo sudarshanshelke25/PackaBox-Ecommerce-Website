@@ -68,7 +68,24 @@ export const createCategoryController = async (req, res) => {
 
 // Get All Category Controller
 export const getAllCategoryController = async (req, res) => {
+    try {
+        // Get All Categories
+        const category = await Category.find({}).sort({ createdAt: 1});
 
+        res.status(200).send({
+            success: true,
+            message: 'Get All Categories List',
+            category,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get All Categories!',
+            error,
+        });
+    }
 }
 
 // Get One Category Controller
