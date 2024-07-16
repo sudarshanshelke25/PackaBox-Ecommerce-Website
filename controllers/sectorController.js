@@ -60,14 +60,33 @@ export const getAllSectorController = async (req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Error in GetAll Sectors!'
+            message: 'Error in Get All Sectors!'
         });
     }
 };
 
 // Get One Sector Controller
 export const getSectorController = async (req, res) => {
+    try {
+        // Get Slug From Request Params
+        const {slug} = req.params;
 
+        // Get One Sector By Slug
+        const sector = await Sector.findOne({slug});
+
+        res.status(200).send({
+            success: true,
+            message: `Get a ${sector.name} Sector info`,
+            sector,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get Single Sector!'
+        });
+    }
 };
 
 // Update Sector Controller
