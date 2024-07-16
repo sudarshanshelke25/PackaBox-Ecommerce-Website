@@ -27,5 +27,4 @@ router.get('/admin-auth', protectedRoute, adminRoute, (req, res) => {
 });
 
 
-
 export default router;
