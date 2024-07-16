@@ -1,14 +1,16 @@
-/* .layout {
-    
-} */
+.layout {
+    max-width: 100vw;
+}
 
 .header-layout {
     min-height: 8vh;
     background-color: var(--white6);
+    width: 100vw;
 }
 
 .main-layout {
     min-height: 91vh;
+    width: 100vw;
 }
 
 .footer-layout {

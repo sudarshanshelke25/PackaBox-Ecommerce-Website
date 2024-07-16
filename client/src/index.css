@@ -79,6 +79,7 @@ body {
     margin-block: auto;
     background-color: var(--white3);
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
