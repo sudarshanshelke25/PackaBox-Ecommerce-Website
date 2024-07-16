@@ -91,7 +91,27 @@ export const getAllTypeController = async (req, res) => {
 
 // Get One Type Controller
 export const getTypeController = async (req, res) => {
-    
+    try {
+        // Get Slug From Request Params
+        const {slug} = req.params;
+
+        // Get Single Type
+        const type = await Type.findOne({slug});
+
+        res.status(200).send({
+            success: true,
+            message: `Get a ${type.name} Type info`,
+            type,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get Single Type!',
+            error,
+        });
+    }
 }
 
 // Update Type Controller
