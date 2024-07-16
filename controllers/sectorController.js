@@ -16,7 +16,7 @@ export const createSectorController = async (req, res) => {
 
         // Get Existing Sector
         const existingSector = await Sector.findOne({name});
-        // Get Existing Sector
+        // Check Existing Sector
         if (existingSector) {
             return res.status(200).send({
                 success: true,
