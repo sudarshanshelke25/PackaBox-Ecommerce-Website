@@ -15,7 +15,7 @@ router.get('/getall-category', getAllCategoryController);
 router.get('/get-category/:slug', getCategoryController);
 
 // Update Category || PUT Method
-router.put('/update-category/:id', updateCategoryController);
+router.put('/update-category/:id', formidable(), updateCategoryController);
 
 // Create Category || DELETE Method
 router.delete('/delete-category/:id', deleteCategoryController);
