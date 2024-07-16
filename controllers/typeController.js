@@ -69,7 +69,24 @@ export const createTypeController = async (req, res) => {
 
 // Get All Type Controller
 export const getAllTypeController = async (req, res) => {
-    
+    try {
+        // Get All Type
+        const type = await Type.find({}).sort({ createdAt: 1});
+
+        res.status(200).send({
+            success: true,
+            message: 'Get All Types List',
+            type,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get All Types!',
+            error,
+        });
+    }
 }
 
 // Get One Type Controller
