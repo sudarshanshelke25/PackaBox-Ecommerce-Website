@@ -27,9 +27,9 @@ export const adminRoute = async(req, res, next) => {
         const user = await User.findById(req.user._id);
         if(user.role === 'admin'){
             next(); 
-
+            
         } else {
-            return res.status(200).send({
+            return res.status(401).send({
                 success: false,
                 message: 'Unauthorized User Access Please LogIn by Admin'
             });

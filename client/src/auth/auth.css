@@ -30,6 +30,10 @@
     right: 30px;
 }
 
+.admin {
+    padding-block: 3.5rem 2rem;
+}
+
 .auth div {
     margin-bottom: 1rem;
 }

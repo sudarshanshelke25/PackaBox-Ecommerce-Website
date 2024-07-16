@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { GoBrowser, GoChecklist, GoColumns, GoCreditCard, GoCrossReference, GoGear, GoHeart, GoIterations, GoMultiSelect, GoNote, GoPackage, GoPeople, GoProject, GoRows, GoServer, GoStack, GoSync, GoUnread, GoVersions } from 'react-icons/go';
+import { GoBrowser, GoChecklist, GoColumns, GoCopy, GoCreditCard, GoCrossReference, GoGear, GoHeart, GoIterations, GoMultiSelect, GoNote, GoPackage, GoPeople, GoProject, GoRows, GoServer, GoStack, GoSync, GoUnread, GoVersions } from 'react-icons/go';
 import { VscAccount } from 'react-icons/vsc';
 import { useAuth } from '../../context/auth';
 
@@ -20,18 +20,8 @@ const AdminMenu = () => {
 
   return (
     <>
-    <section className='auth account'>
+    <section className='auth account admin'>
           <div className='account-aside'>
-
-            {/* <div className='form-header account-header'>
-              <div className='user-cover'>
-                <img src="" alt=""/>
-              </div>
-              <div className='user-info'>
-                <h1 className='title'>{auth.user.name}</h1>
-                <h2 className='subtitle'>{auth.user.email}</h2>
-              </div>
-            </div> */}
 
             <div className='form-main account-form'>
               <ul className='account-links'>
@@ -51,6 +41,12 @@ const AdminMenu = () => {
                     <NavLink to='/admin/orders' className='auth-link account-link'>
                         <i className='icon'><GoVersions /></i>
                         <span className='text'>  Manage Orders</span>
+                    </NavLink>
+                </li>
+                <li className='auth-item account-item'>
+                    <NavLink to='/admin/categories' className='auth-link account-link'>
+                        <i className='icon'><GoCopy /></i>
+                        <span className='text'>  Manage Sectors</span>
                     </NavLink>
                 </li>
                 <li className='auth-item account-item'>

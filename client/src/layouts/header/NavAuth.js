@@ -44,7 +44,7 @@ const NavAuth = () => {
                     </li>
                 </>) : (<>
                     <li className='auth-item nav-item'>
-                        <NavLink to={`${auth?.user?.role ==='admn' ? '/admin' : '/account'}`} className='auth-link user-name nav-link'>
+                        <NavLink to={`${auth?.user?.role ==='admin' ? '/admin' : '/account'}`} className='auth-link user-name nav-link'>
                             <i className='icon'><VscAccount /></i>
                             <span className='text'> {auth.user.name}</span>
                         </NavLink>
