@@ -171,5 +171,25 @@ export const updateBrandController = async (req, res) => {
 
 // Delete Brand Controller
 export const deleteBrandController = async (req, res) => {
-    
+    try {
+        // Get Brand ID From Request Params
+        const {id} = req.params;
+
+        // Find By Id And Update Brand
+        const brand = await Brand.findByIdAndDelete(id);
+
+        res.status(200).send({
+            success: true,
+            message: `${brand.name}, Brand Deleted`,
+            brand,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Delete Brand!`,
+            error,
+        });
+    }
 }
