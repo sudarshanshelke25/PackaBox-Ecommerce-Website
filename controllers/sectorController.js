@@ -116,7 +116,28 @@ export const updateSectorController = async (req, res) => {
     }
 };
 
-// Create Sector Controller
+// Delete Sector Controller
 export const deleteSectorController = async (req, res) => {
+    try {
 
+        // Get ID Form Request Params
+        const {id} = req.params;
+
+         // Find Sector By ID and Delete
+        const sector = await Sector.findByIdAndDelete(id);
+
+        res.status(200).send({
+            success: true,
+            message: `${sector.name}, Sector Deleted`,
+            sector,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Delete Sector!',
+            error,
+        });
+    }
 };
