@@ -3,8 +3,10 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import connectDB from './config/mongoose.js';
-import authRoutes from './routes/authRoute.js';
 import cors from 'cors';
+
+import authRoutes from './routes/authRoute.js';
+import sectorRoutes from './routes/sectorRoute.js';
 
 // Configure ENV
 dotenv.config();
@@ -23,6 +25,7 @@ app.use(morgan('dev'));
 
 // ROUTES
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/sector', sectorRoutes);
 // app.use('/api/v1/category/', categoryRoutes);
 // app.use('/api/v1/product/', productRoutes);
 
