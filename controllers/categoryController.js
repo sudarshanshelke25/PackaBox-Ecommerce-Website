@@ -62,7 +62,7 @@ export const createCategoryController = async (req, res) => {
             success: false,
             message: `Error in Create Category!`,
             error,
-        })
+        });
     }
 }
 
@@ -94,7 +94,7 @@ export const getCategoryController = async (req, res) => {
         // Get Slug From Request Params
         const {slug} = req.params;
 
-        // Get Single Categories
+        // Get Single Category
         const category = await Category.findOne({slug});
 
         res.status(200).send({
@@ -107,7 +107,7 @@ export const getCategoryController = async (req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: `Error in Get Single Categories!`,
+            message: `Error in Get Single Category!`,
             error,
         });
     }
@@ -149,9 +149,9 @@ export const updateCategoryController = async (req, res) => {
             category.cover.data = fs.readFileSync(cover.path);
             category.cover.contentType = cover.type;
         }
-        category.save();
+        await category.save();
 
-        res.status(204).send({
+        res.status(200).send({
             success: true,
             message: `${category.name}, Category Updated`,
             category,

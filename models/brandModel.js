@@ -19,7 +19,7 @@ const brandSchema = new mongoose.Schema(
         logo: {
             data: Buffer,
             conetntType: String,
-        },
+        }
     },
     {
         timestamps: true,
