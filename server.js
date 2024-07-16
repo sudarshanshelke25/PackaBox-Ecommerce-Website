@@ -8,6 +8,7 @@ import cors from 'cors';
 import authRoutes from './routes/authRoute.js';
 import sectorRoutes from './routes/sectorRoute.js';
 import categoryRoutes from './routes/categoryRoute.js';
+import brandRoutes from './routes/brandRoute.js';
 
 // Configure ENV
 dotenv.config();
@@ -28,6 +29,7 @@ app.use(morgan('dev'));
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/sector', sectorRoutes);
 app.use('/api/v1/category', categoryRoutes);
+app.use('/api/v1/brand', brandRoutes);
 // app.use('/api/v1/category/', categoryRoutes);
 // app.use('/api/v1/product/', productRoutes);
 
