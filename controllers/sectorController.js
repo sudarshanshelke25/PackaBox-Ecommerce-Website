@@ -32,8 +32,7 @@ export const createSectorController = async (req, res) => {
             success: true,
             message: `${sector.name}, New Sector Created`,
             sector,
-        })
-
+        });
 
     } catch (error) {
         console.log(error);
@@ -47,7 +46,23 @@ export const createSectorController = async (req, res) => {
 
 // Get All Sector Controller
 export const getAllSectorController = async (req, res) => {
+    try {
+        // Get All Sectors
+        const sector = await Sector.find({});
 
+        res.status(200).send({
+            success: true,
+            message: 'Get All Sector List',
+            sector,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in GetAll Sectors!'
+        });
+    }
 };
 
 // Get One Sector Controller
