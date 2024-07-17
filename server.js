@@ -10,6 +10,7 @@ import sectorRoutes from './routes/sectorRoute.js';
 import categoryRoutes from './routes/categoryRoute.js';
 import brandRoutes from './routes/brandRoute.js';
 import typeRoutes from './routes/typeRoute.js';
+import productRoutes from './routes/productRoute.js';
 
 // Configure ENV
 dotenv.config();
@@ -32,14 +33,13 @@ app.use('/api/v1/sector', sectorRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/brand', brandRoutes);
 app.use('/api/v1/type', typeRoutes);
-// app.use('/api/v1/category/', categoryRoutes);
-// app.use('/api/v1/product/', productRoutes);
+app.use('/api/v1/product', productRoutes);
+
 
 // REST API
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to PackABox</h1>`);
 });
-
 
 
 // PORT FOR NODE SERVER

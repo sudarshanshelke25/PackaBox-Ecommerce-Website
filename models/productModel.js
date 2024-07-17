@@ -5,7 +5,6 @@ const productSchema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
-            unique: true,
         },
         slug: {
             type: String,
@@ -14,34 +13,26 @@ const productSchema = new mongoose.Schema(
         description: {
             type: String,
             required: true,
-            unique: true,
         },
         price: {
             type: String,
             required: true,
         },
         discount: {
-            type: Number,
-            default: 0,
+            type: String,
+            default: '0',
         },
-        color: [
-            {
-                name: {
-                    type: String,
-                },
-                shade: { 
-                    type: String,
-                },
-                required: true,
-            },
-        ],
+        color: {
+            type: String,
+            required: true,
+        },
         cover: {
             data: Buffer,
             contentType: String,
         },
         stock: {
-            type: Number,
-            default: 0,
+            type: String,
+            default: '0',
         },
         features: [
             {
@@ -74,15 +65,17 @@ const productSchema = new mongoose.Schema(
             required: true,
         },
         rate: {
-            type: Number,
+            type: String,
             default: 0,
         },
-        review: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Review',
-        },
+        review: [
+            {
+                type: mongoose.Schema.ObjectId,
+                ref: 'Review',
+            },
+        ],
         days: {
-            type: Number,
+            type: String,
             default: 7,
         },
     },
