@@ -253,5 +253,25 @@ export const updateProductController = async (req, res) => {
 
 // Delete Product Controller
 export const deleteProductController = async (req, res) => {
-    
+    try {
+        // Get Product ID From Request Params
+        const {id} = req.params;
+
+        // Find By Id And Update Product
+        const product = await Product.findByIdAndDelete(id);
+
+        res.status(200).send({
+            success: true,
+            message: `${product.name}, Product Deleted`,
+            product,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Error in Delete Product!`,
+            error,
+        });
+    }
 }
