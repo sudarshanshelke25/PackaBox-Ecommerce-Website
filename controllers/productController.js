@@ -124,7 +124,39 @@ export const getAllProductController = async (req, res) => {
 
 // Get One Product Controller
 export const getProductController = async (req, res) => {
-    
+    try {
+        // Get Slug From Request Params
+        const { slug } = req.params;
+
+        // Get Single Product
+        const product = await Product.findOne({ slug })
+            .populate('sector')
+            .populate('category')
+            .populate('brand')
+            .populate('type')
+            .select("-cover");
+
+        if (!product) {
+            return res.status(404).send({
+                success: false,
+                message: 'Product not found!',
+            });
+        }
+
+        res.status(200).send({
+            success: true,
+            message: `Get ${product.name} Product info`,
+            product,
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in getting product!',
+            error: error.message,
+        });
+    }
 };
 
 
