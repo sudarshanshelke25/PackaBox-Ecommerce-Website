@@ -94,7 +94,31 @@ export const createProductController = async (req, res) => {
 
 // Get All Product Controller
 export const getAllProductController = async (req, res) => {
-    
+    try {
+        // Get All Product
+        const product = await Product.find({})
+            .populate('sector')
+            .populate('category')
+            .populate('brand')
+            .populate('type')
+            .select("-cover")
+            .limit(20).sort({ createdAt: -1});
+
+        res.status(200).send({
+            success: true,
+            totalCount: product.length,
+            message: 'Get All Products List',
+            product,
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: 'Error in Get All Products!',
+            error,
+        });
+    }
 }
 
 
